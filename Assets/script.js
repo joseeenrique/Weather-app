@@ -1,5 +1,5 @@
 var searchHistory = [];
-var weatherApiRootUrl = 'https://api.openweathermap.org';
+var weatherApi = 'https://api.openweathermap.org';
 var weatherApiKey = 'd91f911bcf2c0f925fb6535547a5ddc9';
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#search-input');
@@ -34,7 +34,7 @@ function appendToHistory(search) {
     var { lat } = location;
     var { lon } = location;
     var city = location.name;
-    var apiUrl = `${weatherApiRootUrl}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${weatherApiKey}`;
+    var apiUrl = `${weatherApi}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${weatherApiKey}`;
   
     fetch(apiUrl)
       .then(function (res) {
